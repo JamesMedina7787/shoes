@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shoes</title>
+    <link rel="stylesheet" type="text/css" href="shoes.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!--     <h1>Inventory of Shoes for <span id="logo">Paymore Inc.</span></h1>-->
+<div class="container">
+    <a href="add-shoe.html"><button class="btn-add">Add Shoe</button></a>
+    <form method="GET" action="/search"><input type="text" name="search" placeholder="Search" id="search-input"><button><i class="fa fa-search"></i></button></form>
+    <p><%= message %></p>
+    <table>
+        <tr><th class="col-id">Id</th><th>Name</th><th>Material</th><th>Size</th><th>Color</th><th>Qty</th><th colspan=2>Action</th></tr>
+        <% for(i in rows) { %>
+    <tr>
+        <td class="col-id">
+            <%= rows[i].dataValues.id %>
+        </td>
+        <td>
+            <%= rows[i].dataValues.name %>
+        </td>
+        <td>
+            <%= rows[i].dataValues.material %>
+        </td>
+        <td>
+            <%= rows[i].dataValues.size %>
+        </td>
+        <td>
+            <%= rows[i].dataValues.color %>
+        </td>
+            <td>
+            <%= rows[i].dataValues.qty %>
+        </td>
+        <td>
+            <form method="POST" action="/delete/<%= rows[i].dataValues.id %>">
+                <button class="btn-del">Remove</button>
+            </form>
+        </td>
+        <td>
+            <form method="POST" action="/edit/<%= rows[i].dataValues.id %>">
+                <button class="btn-edit">Edit</button>
+            </form>
+        </td>
+    </tr>
+    <% } %>
+</table>
+<br>
+    
+</div>
+</body>
+</html>

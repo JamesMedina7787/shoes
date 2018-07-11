@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Shoe</title>
+    <link rel="stylesheet" type="text/css" href="../shoes.css">
+</head>
+<body>
+    <header><h1><span id="logo">Paymore Inc.</span> | Shoes Inventory</h1></header>
+<h1>Add New Shoes</h1>
+<div class="container-add">
+<form method="POST" action="/add">
+    <div>
+    <label>Name:</label> <input type="text" name="name">
+    </div>
+    <div>
+    <label>Material:</label> <input type="text" name="material"><br>
+    </div>
+    <div>
+    <label>Size:</label> <input type="text" name="size"><br>
+    </div>
+    <div>
+    <label>Color:</label> <input type="text" name="color"><br>
+    </div>
+    <div>
+    <label>Qty:</label> <input type="text" name="qty"><br>
+    </div>
+    <button class="btn-add">Add New Shoes</button>
+</form>
+    <a href="/">
+        <button class="btn-add">Inventory</button>
+    </a>
+</div>
+</body>
+</html>
