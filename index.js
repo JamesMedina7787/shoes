@@ -6,10 +6,10 @@ const Sequelize = require('sequelize')
 const app = express()
 
 const Op = Sequelize.Op
-const sequelize = new Sequelize('sqz', 'postgres', 'lilfluffy22',{
-   host: 'localhost',
-   port: '5432',
-   dialect: 'postgres',
+const sequelize = new Sequelize(plugs.tableName, plugs.dialect, plugs.pw,{
+   host: plugs.localhost,
+   port: plugs.port,
+   dialect: plugs.dialect,
    $and : Op.and,
    $or: Op.or,
    $eq: Op.eq,
